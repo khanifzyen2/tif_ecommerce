@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './router.dart';
 import './constants/global_variables.dart';
 
 void main() {
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
           primary: GlobalVariables.secondaryColor,
         ),
       ),
+      onGenerateRoute: (settings) => generateRoute(settings),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('ECommerce App'),
