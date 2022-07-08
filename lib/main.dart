@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './features/auth/screens/auth_screen.dart';
 import './router.dart';
 import './constants/global_variables.dart';
 
@@ -36,9 +37,15 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Flutter Demo Home Page'),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text('Click'),
+              Builder(
+                builder: (context) {
+                  return ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, AuthScreen.routeName);
+                    },
+                    child: const Text('Click'),
+                  );
+                },
               ),
             ],
           ),
