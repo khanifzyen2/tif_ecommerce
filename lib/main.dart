@@ -15,13 +15,31 @@ class MyApp extends StatelessWidget {
       title: 'ECommerce App',
       theme: ThemeData(
         scaffoldBackgroundColor: GlobalVariables.backgroundColor,
+        appBarTheme: const AppBarTheme(
+          elevation: 0,
+          iconTheme: IconThemeData(
+            color: Colors.black,
+          ),
+        ),
+        colorScheme: const ColorScheme.light(
+          primary: GlobalVariables.secondaryColor,
+        ),
       ),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('ECommerce App'),
         ),
-        body: const Center(
-          child: Text('Flutter Demo Home Page'),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Flutter Demo Home Page'),
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text('Click'),
+              ),
+            ],
+          ),
         ),
       ),
     );
