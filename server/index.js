@@ -1,15 +1,13 @@
 const express = require('express')
+const authRouter = require('./routes/auth')
 const PORT = 3000
 
+//init
 const app = express()
 
-//CREATE API
-//method GET
-//endpoint: http://<ipaddress>:3000/hello-world
-app.get('/hello-world',(req, res) => {
-    res.json({hi: 'Hello World'})
-})
+//middleware
+app.use(authRouter)
 
 app.listen(PORT, "0.0.0.0", ()=>{
-    console.log(`Connected to port ${PORT} haloo`)
+    console.log(`Connected to port ${PORT}`)
 })
